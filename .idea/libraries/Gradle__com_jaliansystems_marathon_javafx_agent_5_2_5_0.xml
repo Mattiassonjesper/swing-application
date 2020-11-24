@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.jaliansystems:marathon-javafx-agent:5.2.5.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jaliansystems/marathon-javafx-agent/5.2.5.0/8000eacc82250c334b0fe2eb098a46c1c9d9f9f8/marathon-javafx-agent-5.2.5.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jaliansystems/marathon-javafx-agent/5.2.5.0/f13228df2c35d29e25e6673024a87278ac59b1f2/marathon-javafx-agent-5.2.5.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

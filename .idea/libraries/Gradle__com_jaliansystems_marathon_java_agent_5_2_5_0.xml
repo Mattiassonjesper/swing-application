@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.jaliansystems:marathon-java-agent:5.2.5.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jaliansystems/marathon-java-agent/5.2.5.0/8dd4d210669a8c340c99f70f352dff43066b96fe/marathon-java-agent-5.2.5.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jaliansystems/marathon-java-agent/5.2.5.0/b19e95558df5582dc9d2e63fde52dc04c7b62a00/marathon-java-agent-5.2.5.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

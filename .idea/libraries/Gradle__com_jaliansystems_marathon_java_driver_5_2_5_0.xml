@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.jaliansystems:marathon-java-driver:5.2.5.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jaliansystems/marathon-java-driver/5.2.5.0/6c28974da4e9b16aa7eba5d1bb3adcced1288b25/marathon-java-driver-5.2.5.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jaliansystems/marathon-java-driver/5.2.5.0/565efb743953ab34977a64b76ee5bee40fa527ad/marathon-java-driver-5.2.5.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
