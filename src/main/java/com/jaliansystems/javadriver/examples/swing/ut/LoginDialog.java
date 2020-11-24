@@ -4,24 +4,13 @@
 
 package com.jaliansystems.javadriver.examples.swing.ut;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
-import javax.swing.SwingUtilities;
+import javax.swing.*;
 import javax.swing.border.LineBorder;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class LoginDialog extends JFrame {
     /**
@@ -36,6 +25,7 @@ public class LoginDialog extends JFrame {
     private JButton btnLogin;
     private JButton btnCancel;
     private boolean succeeded;
+    private JButton btnLazy;
 
     public LoginDialog() {
         super("Login");
@@ -76,27 +66,37 @@ public class LoginDialog extends JFrame {
         panel.add(pfPassword, cs);
         panel.setBorder(new LineBorder(Color.GRAY));
 
+        // uppgift 2
+        btnLazy = new JButton("LazyLogin");
+        btnLazy.setName("Lazy_login");
+        btnLazy.addActionListener(e -> {
+            pfPassword.setText("secret");
+            tfUsername.setText("bob");
+
+        });
+
+
+
         btnLogin = new JButton("Login");
         btnLogin.setName("login_button");
         btnLogin.setEnabled(false);
 
-        btnLogin.addActionListener(new ActionListener() {
+        btnLogin.addActionListener(e -> {
+            if (authenticate(getUsername(), getPassword())) {
+                onSuccess();
+                succeeded = true;
+                dispose();
+            } else {
+                onInvalidCredentials();
+                // reset username and password
+                tfUsername.setText("");
+                pfPassword.setText("");
+                succeeded = false;
 
-            public void actionPerformed(ActionEvent e) {
-                if (authenticate(getUsername(), getPassword())) {
-                    onSuccess();
-                    succeeded = true;
-                    dispose();
-                } else {
-                    onInvalidCredentials();
-                    // reset username and password
-                    tfUsername.setText("");
-                    pfPassword.setText("");
-                    succeeded = false;
-
-                }
             }
         });
+
+
         tfUsername.getDocument().addDocumentListener(new DocumentListener() {
 
             @Override
@@ -143,6 +143,7 @@ public class LoginDialog extends JFrame {
         JPanel bp = new JPanel();
         bp.add(btnLogin);
         bp.add(btnCancel);
+        bp.add(btnLazy);
 
         getContentPane().add(panel, BorderLayout.CENTER);
         getContentPane().add(bp, BorderLayout.PAGE_END);

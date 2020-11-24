@@ -26,7 +26,7 @@ public class LoginDialogTest {
     private WebDriver driver;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         login = new LoginDialog() {
             private static final long serialVersionUID = 1L;
 
@@ -80,7 +80,7 @@ public class LoginDialogTest {
     }
 
     @Test
-    public void loginInvalid() throws InterruptedException {
+    public void loginInvalid() {
         WebElement user = driver.findElement(By.cssSelector("text-field"));
         user.sendKeys("bob");
         WebElement pass = driver.findElement(By.cssSelector("password-field"));
@@ -109,6 +109,18 @@ public class LoginDialogTest {
         for (WebElement tc : textComponents) {
             assertNotEquals(null, tc.getAttribute("toolTipText"));
         }
+    }
+
+    //uppgift 2
+    @Test
+    public void testLazyLogin() {
+        WebElement user = driver.findElement(By.cssSelector("text-field"));
+        WebElement pass = driver.findElement(By.cssSelector("password-field"));
+        WebElement getLazyBtn = driver.findElement(By.cssSelector("button[text='LazyLogin']"));
+
+        getLazyBtn.click();
+        assertEquals("bob", user.getText());
+        assertEquals("secret", pass.getText());
     }
 
     // Bonus
